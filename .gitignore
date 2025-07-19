@@ -1,0 +1,22 @@
+# Bytecode & cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+
+# Build artifacts
+dist/
+build/
+
+# Python environments
+.env
+.venv
+env/
+venv/
+*.env
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
