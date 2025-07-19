@@ -1,4 +1,4 @@
-# Γ Scalping Algorithm
+# Γ-Scalping Algorithm
 
 This repository implements a gamma scalping strategy for cryptocurrency options (e.g., BTC options on Deribit). The project is organized for research, backtesting, and live trading, with modular components for data, modeling, strategy logic, and risk management.
 
