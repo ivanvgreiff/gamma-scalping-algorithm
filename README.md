@@ -2,6 +2,9 @@
 
 This repository implements a gamma scalping strategy for cryptocurrency options (e.g., BTC options on Deribit). The project is organized for research, backtesting, and live trading, with modular components for data, modeling, strategy logic, and risk management.
 
+**Status Quo**: [Notion](https://www.notion.so/Status-Quo-2352899f527f8014a7dcf597a7c86ac2)
+
+
 ## Project Structure
 
 ```
