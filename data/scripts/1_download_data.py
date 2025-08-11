@@ -1,7 +1,8 @@
-from data_downloader import Downloader
+from data_downloader import Downloader, configure_logging
 from datetime import datetime, timedelta
 
 def main():
+    configure_logging('INFO')
     start_date = '2019-03-30'
     end_date = '2025-07-20'
     
@@ -11,7 +12,6 @@ def main():
         base_path="./data/raw/options/",
         max_concurrent_requests=10,
         max_retries=3,
-        log_level='INFO'
     )
     options_downloader.download(
         exchange='deribit',
@@ -29,7 +29,6 @@ def main():
     #    base_path="./downloads/futures/",
     #    max_concurrent_requests=10,
     #    max_retries=3,
-    #    log_level='INFO'
     #)
     #futures_downloader.download(
     #    exchange='deribit',
@@ -44,7 +43,6 @@ def main():
         base_path="./data/raw/spot/",
         max_concurrent_requests=10,
         max_retries=3,
-        log_level='INFO'
     )
     spot_downloader.download(
         exchange='binance',
