@@ -20,7 +20,7 @@ def main():
         end_date=end_date,
         format='feather',
         kind='option',
-        skip_existing=False
+        skip_existing=True
     )
     
     # Download all BTC futures in one call
@@ -50,8 +50,9 @@ def main():
         start_date=start_date,
         end_date=end_date,
         format='feather',
-        kind='spot',
-        skip_existing=False
+        data_type='klines',
+        interval='1h',
+        skip_existing=True
     )
 
     print("\n=== Download complete! ===")
