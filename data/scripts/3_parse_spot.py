@@ -9,7 +9,7 @@ The output preserves the original 1h bar granularity (or whatever interval
 was downloaded) and adds a UTC datetime column.
 
 Usage (defaults to BTCUSDT):
-    python data/scripts/2_parse_spot.py --symbol BTCUSDT --interval 1h
+    python data/scripts/3_parse_spot.py --symbol BTCUSDT --interval 1h
 
 Re-running is idempotent; it will overwrite the unified file unless
 `--append` is specified (append performs a simple concat + drop_duplicates
@@ -27,8 +27,10 @@ def load_daily_files(raw_dir: Path) -> list[pd.DataFrame]:
     if not files:
         print(f"No feather files found in {raw_dir}")
         return []
+
     dfs = []
-    for f in files:
+    total = len(files)
+    for i, f in enumerate(files, 1):
         try:
             df = pd.read_feather(f)
             if 'timestamp' not in df.columns:
@@ -37,7 +39,13 @@ def load_daily_files(raw_dir: Path) -> list[pd.DataFrame]:
             dfs.append(df)
         except Exception as e:
             print(f"  Error reading {f.name}: {e}")
+
+        # progress feedback
+        if i % 50 == 0 or i == total:
+            print(f"  Loaded {i:,}/{total:,} files")
+
     return dfs
+
 
 
 def unify(df: pd.DataFrame) -> pd.DataFrame:
