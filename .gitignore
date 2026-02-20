@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 *.pyo
+.DS_Store
 
 # Build artifacts
 dist/
@@ -20,3 +21,6 @@ venv/
 
 # VS Code
 .vscode/
+
+data/raw/
+data/parsed/
