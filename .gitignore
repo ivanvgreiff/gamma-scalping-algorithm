@@ -24,3 +24,7 @@ venv/
 
 data/raw/
 data/parsed/
+
+# Local scratch notebooks
+*_old.ipynb
+.pytest_cache/
